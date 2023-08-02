@@ -69,8 +69,8 @@ class ContactInfoFragment : Fragment() {
     }
 
     private fun deleteContact() {
-        viewModel.contactInfo.value?.id?.let { viewModel.deleteContact(it) }
-        Toast.makeText(requireContext(),"Contact Deleted",Toast.LENGTH_SHORT).show()
         findNavController().popBackStack()
+        Toast.makeText(requireContext(),"Contact Deleted",Toast.LENGTH_SHORT).show()
+        viewModel.contactInfo.value?.id?.let { viewModel.deleteContact(it) }
     }
 }
